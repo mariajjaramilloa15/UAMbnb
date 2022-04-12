@@ -13,7 +13,17 @@ class Owner extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('owner', function (Blueprint $table) {
+            $table->id();
+            $table->string('name');
+            $table->string('email')->unique();
+            $table->string('property');
+            $table->timestamp('email_verified_at')->nullable();
+            $table->string('password');
+            $table->foreignId('user_id')->references('id')->on('users');
+            $table->rememberToken();
+            $table->timestamps();
+        });
     }
 
     /**
@@ -23,6 +33,6 @@ class Owner extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('owner');
     }
 }

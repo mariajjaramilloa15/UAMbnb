@@ -13,7 +13,17 @@ class Property extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('property', function (Blueprint $table) {
+            $table->id();
+            $table->string('name');
+            $table->text('descripcion');
+            $table->integer('precio');
+            $table->string('comentarios');
+            $table->integer('likes')->nullable();
+            $table->foreignId('user_id')->references('id')->on('users');
+            $table->timestamp('last_used_at')->nullable();
+            $table->timestamps();
+        });
     }
 
     /**
@@ -23,6 +33,6 @@ class Property extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('property');
     }
 }
