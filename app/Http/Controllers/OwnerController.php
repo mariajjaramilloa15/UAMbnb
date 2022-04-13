@@ -1,8 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
-use App\Models\Owner;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
 
 class OwnerController extends Controller
@@ -14,7 +13,8 @@ class OwnerController extends Controller
      */
     public function index()
     {
-        //
+        $owners = Owner::orderBy('created_at','desc')->simplePaginate(10);
+        return view('owners.index',compact('owners'));
     }
 
     /**
@@ -24,7 +24,7 @@ class OwnerController extends Controller
      */
     public function create()
     {
-        //
+         return view('owners.create');
     }
 
     /**
@@ -35,16 +35,19 @@ class OwnerController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $owner = new Owner();
+        $owner -> fill($request->input());
+        $owner -> password = Hash::make($request->input('password'));
+        $owner -> save();
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Owner  $owner
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Owner $owner)
+    public function show($id)
     {
         //
     }
@@ -52,10 +55,10 @@ class OwnerController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Owner  $owner
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Owner $owner)
+    public function edit($id)
     {
         //
     }
@@ -64,10 +67,10 @@ class OwnerController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Owner  $owner
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Owner $owner)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -75,10 +78,10 @@ class OwnerController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Owner  $owner
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Owner $owner)
+    public function destroy($id)
     {
         //
     }
