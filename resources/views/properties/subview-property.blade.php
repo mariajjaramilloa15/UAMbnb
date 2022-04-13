@@ -1,12 +1,20 @@
 <div class="card mb-3">
     <div class="card-body d-flex justify-content-between">
         <div>
-             <div id="valorCategoria"></div>
-             <p class="card-text">{{ $property->name }}</p>
-             <p class="card-text">{{ $property->descripcion }}</p>
-             <p class="card-text">{{ $property->precio }}</p>
-             <p class="card-text">{{ $property->likes }}</p>
-            <h6 class="card-subtitle mb-2 text-muted">{{ $property->created_at->diffForHumans()}}</h6>
+            <p class="card-text">{{ $property->name }}</p>
+            <div className="container">
+                <div className="row">
+                    <div className="col-6">
+                        <img src="https://i.pinimg.com/736x/da/ec/b9/daecb9781f1fc1df4112f132e2fd839c.jpg" alt="" width="310" height="400" />
+                    </div>
+                    <br/>
+                    <p class="card-text">{{ $property->descripcion }}</p>
+                    <p class="card-text">{{ $property->precio }}</p>
+                    <p class="card-text">{{ $property->likes }}</p>
+                   <h6 class="card-subtitle mb-2 text-muted">{{ $property->created_at->diffForHumans()}}</h6>
+
+                </div>
+            </div>
         </div>
 
      @auth
