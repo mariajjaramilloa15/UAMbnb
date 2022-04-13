@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Property;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+
 
 class PropertyController extends Controller
 {
@@ -14,7 +17,7 @@ class PropertyController extends Controller
      */
     public function index()
     {
-        //
+        return view('properties.index');
     }
 
     /**
@@ -24,7 +27,10 @@ class PropertyController extends Controller
      */
     public function create()
     {
-        //
+        $properties = Property::where('user_id', Auth::id())
+            ->get();
+
+        return view('properties.create', compact('properties'));
     }
 
     /**
@@ -33,9 +39,16 @@ class PropertyController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(PropertyCreateRequest $request)
     {
-        //
+        $property = new Property();
+        $property->fill($request->input());
+        $property->user_id = Auth::id();
+        $property->save();
+
+        return redirect(route('home'));
+
+        //dd ($request->input('content'));
     }
 
     /**
@@ -57,7 +70,7 @@ class PropertyController extends Controller
      */
     public function edit(Property $property)
     {
-        //
+        return view('properties.edit', compact('property'));
     }
 
     /**
@@ -67,9 +80,12 @@ class PropertyController extends Controller
      * @param  \App\Models\Property  $property
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Property $property)
+    public function update(PropertyCreateRequest $request, Property $property)
     {
-        //
+            $property->fill($request->input());
+            $property->save();
+
+            return redirect(route('user.properties', $property->user_id));
     }
 
     /**
@@ -80,6 +96,13 @@ class PropertyController extends Controller
      */
     public function destroy(Property $property)
     {
-        //
+        if($property->user_id == Auth::id()){
+            $property->delete();
+
+            return redirect(route('user.properties', $property->user_id));
+        }else{
+            return "No puedes eliminar este inmueble. ";
+        }
+
     }
 }
