@@ -1,6 +1,12 @@
 <?php
 
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PropertyController;
+use App\Http\Controllers\OwnerController;
+use App\Http\Controllers\UserController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -13,10 +19,30 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Publicas
+
+Route::get('/', [App\http\Controllers\WelcomeController::class, 'index']);
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+//Privadas
+
+Route::middleware(['auth'])->group(function (){
+    Route::get('/home', [HomeController::class, 'index'])
+    ->name('home');
+
+    Route::get('/a/{user}', [PropertyController::class, 'index'])
+    ->name('user.properties');
+
+    Route::get('/e/{user}', [OwnerController::class, 'index'])
+    ->name('user.owners');
+
+    Route::resource('users', UserController::class)
+    ->except(['index']);
+
+    Route::resource('properties', PropertyController::class)
+    ->middleware('auth');
+
+    Route::resource('owners', OwnerController::class)
+    ->middleware('auth');
+});
