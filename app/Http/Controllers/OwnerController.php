@@ -1,7 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
-use Illuminate\Support\Facades\Hash;
+
+use App\Owner;
 use Illuminate\Http\Request;
 
 class OwnerController extends Controller
@@ -13,8 +14,7 @@ class OwnerController extends Controller
      */
     public function index()
     {
-        $owners = Owner::orderBy('created_at','desc')->simplePaginate(10);
-        return view('owners.index',compact('owners'));
+        return view("owners.index", ["owner" => Owner::all()]);
     }
 
     /**
@@ -24,30 +24,28 @@ class OwnerController extends Controller
      */
     public function create()
     {
-         return view('owners.create');
+        return view("owners.create");
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
-        $owner = new Owner();
-        $owner -> fill($request->input());
-        $owner -> password = Hash::make($request->input('password'));
-        $owner -> save();
+        (new Owner($request->input()))->saveOrFail();
+        return redirect()->route("owners.index")->with("mensaje", "Propietario agregado");
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param \App\Owner $cliente
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Owner $owner)
     {
         //
     }
@@ -55,34 +53,37 @@ class OwnerController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param \App\Owner $owner
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Cliente $owner)
     {
-        //
+        return view("owners.edit", ["owner" => $owner]);
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param \App\Owner $owner
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Cliente $owner)
     {
-        //
+        $owner->fill($request->input());
+        $owner->saveOrFail();
+        return redirect()->route("owners.index")->with("mensaje", "Propietario actualizado");
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param \App\Owner $cliente
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Cliente $owner)
     {
-        //
+        $owner->delete();
+        return redirect()->route("owners.index")->with("mensaje", "Propietario eliminado");
     }
 }
