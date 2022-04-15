@@ -2,25 +2,45 @@
 
 @section('content')
 
-<div class="container">
-    <h1 class="text-center">Usuarios Registrados</h1>
-
-    @forelse ($users as $user)
-        <div class="card mb-2">
-            <div class="card-body">
-
-                <h5 class="card-title">{{$user->name}}</h5>
-
-                <h6 class="card-subtitle mb-2 text-muted">{{$user->created_at->diffForHumans()}}</h6>
-                <p class="card-text">{{$user->email}}</p>
+<div class="row">
+        <div class="col-12">
+            <h1>Usuarios <i class="fa fa-users"></i></h1>
+            <a href="{{route("usuarios.create")}}" class="btn btn-success mb-2">Agregar</a>
+            @include("notificacion")
+            <div class="table-responsive">
+                <table class="table table-bordered">
+                    <thead>
+                    <tr>
+                        <th>Correo electrónico</th>
+                        <th>Nombre</th>
+                        <th>Editar</th>
+                        <th>Eliminar</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    @foreach($usuarios as $usuario)
+                        <tr>
+                            <td>{{$usuario->email}}</td>
+                            <td>{{$usuario->name}}</td>
+                            <td>
+                                <a class="btn btn-warning" href="{{route("usuarios.edit",[$usuario])}}">
+                                    <i class="fa fa-edit"></i>
+                                </a>
+                            </td>
+                            <td>
+                                <form action="{{route("usuarios.destroy", [$usuario])}}" method="post">
+                                    @method("delete")
+                                    @csrf
+                                    <button type="submit" class="btn btn-danger">
+                                        <i class="fa fa-trash"></i>
+                                    </button>
+                                </form>
+                            </td>
+                        </tr>
+                    @endforeach
+                    </tbody>
+                </table>
             </div>
         </div>
-    @empty
-    <div class="alert alert-info" role="alert">
-        No hay usuarios registrados.
     </div>
-@endforelse
-<div class="mt-3"> {{ $users->links() }} </div>
-</div>
-
 @endsection
