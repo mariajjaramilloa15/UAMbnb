@@ -21,7 +21,7 @@ use Illuminate\Support\Facades\Route;
 
 //Publicas
 
-Route::get('/', [App\http\Controllers\WelcomeController::class, 'index']);
+//Route::get('/', [App\http\Controllers\WelcomeController::class, 'index']);
 
 Auth::routes();
 
