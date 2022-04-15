@@ -1,23 +1,3 @@
-{{--
-
-  ____          _____               _ _           _
- |  _ \        |  __ \             (_) |         | |
- | |_) |_   _  | |__) |_ _ _ __ _____| |__  _   _| |_ ___
- |  _ <| | | | |  ___/ _` | '__|_  / | '_ \| | | | __/ _ \
- | |_) | |_| | | |  | (_| | |   / /| | |_) | |_| | ||  __/
- |____/ \__, | |_|   \__,_|_|  /___|_|_.__/ \__, |\__\___|
-         __/ |                               __/ |
-        |___/                               |___/
-
-    Blog:       https://parzibyte.me/blog
-    Ayuda:      https://parzibyte.me/blog/contrataciones-ayuda/
-    Contacto:   https://parzibyte.me/blog/contacto/
-
-    Copyright (c) 2020 Luis Cabrera Benito
-    Licenciado bajo la licencia MIT
-
-    El texto de arriba debe ser incluido en cualquier redistribucion
---}}
 @extends("principal")
 @section("titulo", "Realizar venta")
 @section("contenido")
@@ -67,20 +47,22 @@
                     <table class="table table-bordered">
                         <thead>
                         <tr>
-                            <th>Código de barras</th>
+                            <th>Nombre</th>
                             <th>Descripción</th>
-                            <th>Precio</th>
+                            <th>Precio de compra</th>
+                            <th>Comentarios</th>
+                            <th>Likes</th>
                             <th>Cantidad</th>
                             <th>Quitar</th>
                         </tr>
                         </thead>
                         <tbody>
-                        @foreach(session("inmuebles") as $inmueble)
+                        @foreach(session("inmuebles") as $property)
                             <tr>
-                                <td>{{$producto->codigo_barras}}</td>
-                                <td>{{$producto->descripcion}}</td>
-                                <td>${{number_format($producto->precio_venta, 2)}}</td>
-                                <td>{{$producto->cantidad}}</td>
+                                <td>{{$property->name}}</td>
+                                <td>{{$property->descripcion}}</td>
+                                <td>${{number_format($property->precio_venta, 2)}}</td>
+                                <td>{{$property->cantidad}}</td>
                                 <td>
                                     <form action="{{route("quitarProductoDeCompra")}}" method="post">
                                         @method("delete")
@@ -99,7 +81,7 @@
             @else
                 <h2>Aquí aparecerán los productos de la compra o alquiler
                     <br>
-                    Escanea el código de barras o escribe y presiona Enter</h2>
+                </h2>
             @endif
         </div>
     </div>
