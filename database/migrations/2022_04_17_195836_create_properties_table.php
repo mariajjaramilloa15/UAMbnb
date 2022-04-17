@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Owner extends Migration
+class CreatePropertiesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,15 @@ class Owner extends Migration
      */
     public function up()
     {
-        Schema::create('owner', function (Blueprint $table) {
+        Schema::create('properties', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('email')->unique();
-            $table->string('property');
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
+            $table->text('name');
+            $table->text('descripcion');
+            $table->integer('precio');
+            $table->string('comentarios');
+            $table->integer('likes')->nullable();
             $table->foreignId('user_id')->references('id')->on('users');
-            $table->rememberToken();
+            $table->timestamp('last_used_at')->nullable();
             $table->timestamps();
         });
     }
@@ -33,6 +33,6 @@ class Owner extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('owner');
+        Schema::dropIfExists('properties');
     }
 }

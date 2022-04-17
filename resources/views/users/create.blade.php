@@ -1,31 +1,28 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="row">
-        <div class="col-12">
-            <h1>Agregar usuario</h1>
-            <form method="POST" action="{{route("usuarios.store")}}">
-                @csrf
-                <div class="form-group">
-                    <label class="label">Nombre</label>
-                    <input required autocomplete="off" name="name" class="form-control"
-                           type="text" placeholder="Nombre">
-                </div>
-                <div class="form-group">
-                    <label class="label">Correo electrónico</label>
-                    <input required autocomplete="off" name="email" class="form-control"
-                           type="email" placeholder="Correo electrónico">
-                </div>
-                <div class="form-group">
-                    <label class="label">Contraseña</label>
-                    <input required autocomplete="off" name="password" class="form-control"
-                           type="password" placeholder="Contraseña">
-                </div>
 
-                @include("notificacion")
-                <button class="btn btn-success">Guardar</button>
-                <a class="btn btn-primary" href="{{route("usuarios.index")}}">Volver al listado</a>
-            </form>
+<div class="container">
+    <h1 class="text-center">Registrar un nuevo usuario</h1>
+
+    {!! Form::open(['route' => 'users.store', 'method' => 'POST']) !!}
+        <div class="mb-3 form-group">
+            <label for="formGroupExampleInput">Nombre</label>
+            <input type="text" class="form-control" id="name" name="name" placeholder="Nombre">
         </div>
+        <div class="mb-3 form-group">
+            <label for="exampleInputEmail1">Correo Electronico</label>
+            <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="Correo">
+            <small id="emailHelp" class="form-text text-muted">No compartiremos tú información con nadie más.</small>
+        </div>
+        <div class="mb-3 form-group">
+            <label for="exampleInputPassword1">Contraseña</label>
+            <input type="password" class="form-control" id="password" name="password" placeholder="Contraseña">
+        </div>
+        <button type="submit" class="btn btn-primary" >Crear</button>
+
+        {!! Form::close() !!}
+
     </div>
+
     @endsection

@@ -16,7 +16,7 @@ class PropertySeeder extends Seeder
     public function run()
     {
         Ingreso::create([
-            'name' => '',
+            'name' => 'Apartamento',
             'descripcion' => '',
             'precio' => 12000,
             'comentarios' => '',
@@ -25,7 +25,7 @@ class PropertySeeder extends Seeder
         ]);
 
         Ingreso::create([
-            'name' => '',
+            'name' => 'Apartamento',
             'descripcion' => '',
             'precio' => 10000,
             'comentarios' => '',

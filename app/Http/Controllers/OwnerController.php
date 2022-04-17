@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Owner;
+use App\Models\Owner;
 use Illuminate\Http\Request;
+
+use Illuminate\Support\Facades\Auth;
 
 class OwnerController extends Controller
 {
@@ -24,7 +26,10 @@ class OwnerController extends Controller
      */
     public function create()
     {
-        return view("owners.create");
+        $owners = Owner::where('user_id', Auth::id())
+            ->get();
+
+        return view("owners.create", compact('owners'));
     }
 
     /**
