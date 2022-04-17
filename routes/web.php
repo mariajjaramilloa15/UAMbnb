@@ -27,6 +27,10 @@ Route::get('/home', function () {
     return view('home');
 });
 
+Route::get('/sobreNosotros', function () {
+    return view('sobreNosotros');
+});
+
 //Route::get('/', [App\http\Controllers\WelcomeController::class, 'index']);
 
 Auth::routes();
@@ -51,4 +55,5 @@ Route::middleware(['auth'])->group(function (){
 
     Route::resource('owners', OwnerController::class)
     ->middleware('auth');
+
 });

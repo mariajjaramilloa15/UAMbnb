@@ -38,7 +38,7 @@
 
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
-                    <img src="https://i.postimg.cc/sXd1G5RP/Whats-App-Image-2022-04-15-at-4-16-06-PM.jpg"   width="100" height="35">
+                    <img src="https://i.postimg.cc/sXd1G5RP/Whats-App-Image-2022-04-15-at-4-16-06-PM.jpg"   width="115" height="35">
 
                     </ul>
 
