@@ -24,7 +24,7 @@ class PropertyCreateRequest extends FormRequest
     public function rules()
     {
         return [
-            'descripcion'=>'required|string|max:500|min:100'
+            'descripcion'=>'required|text|max:500|min:100'
 
         ];
     }

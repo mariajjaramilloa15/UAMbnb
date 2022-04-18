@@ -73,7 +73,7 @@ class OwnerController extends Controller
      * @param \App\Owner $owner
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Cliente $owner)
+    public function update(Request $request, Owner $owner)
     {
         $owner->fill($request->input());
         $owner->saveOrFail();

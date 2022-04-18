@@ -58,7 +58,7 @@ class PropertyController extends Controller
      * @param  \App\Models\Property  $property
      * @return \Illuminate\Http\Response
      */
-    public function show(PropertyCreateRequest $property)
+    public function show(Property $property)
     {
         //
     }

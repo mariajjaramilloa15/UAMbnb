@@ -17,7 +17,9 @@ class CreatePropertiesTable extends Migration
             $table->id();
             $table->text('name');
             $table->text('descripcion');
+            $table->integer('area');
             $table->integer('precio');
+            $table->text('caracteristicas');
             $table->string('comentarios');
             $table->integer('likes')->nullable();
             $table->foreignId('user_id')->references('id')->on('users');

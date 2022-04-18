@@ -18,6 +18,7 @@ class CreateOwnersTable extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->string('property');
+            $table->integer('telefono');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->foreignId('user_id')->references('id')->on('users');
