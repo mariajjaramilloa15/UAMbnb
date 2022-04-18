@@ -15,37 +15,45 @@ class PropertySeeder extends Seeder
      */
     public function run()
     {
-        Ingreso::create([
+        Property::create([
             'name' => 'Apartamento',
             'descripcion' => '',
+            'area' => 12,
             'precio' => 12000,
+            'caracteristicas' => '',
             'comentarios' => '',
             'likes' => 12,
             'user_id' => 1
         ]);
 
-        Ingreso::create([
+        Property::create([
             'name' => 'Apartamento',
             'descripcion' => '',
-            'precio' => 10000,
+            'area' => 12,
+            'precio' => 12000,
+            'caracteristicas' => '',
             'comentarios' => '',
             'likes' => 10,
             'user_id' => 2
         ]);
 
-        Ingreso::create([
+        Property::create([
             'name' => '',
             'descripcion' => '',
-            'precio' => 18000,
+            'area' => 12,
+            'precio' => 12000,
+            'caracteristicas' => '',
             'comentarios' => '',
             'likes' => 18,
             'user_id' => 3
         ]);
 
-        Ingreso::create([
+        Property::create([
             'name' => '',
             'descripcion' => '',
-            'precio' => 16000,
+            'area' => 12,
+            'precio' => 12000,
+            'caracteristicas' => '',
             'comentarios' => '',
             'likes' => 16,
             'user_id' => 4

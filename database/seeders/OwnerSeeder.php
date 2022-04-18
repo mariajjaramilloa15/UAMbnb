@@ -15,34 +15,38 @@ class OwnerSeeder extends Seeder
      */
     public function run()
     {
-        Ingreso::create([
+        Owner::create([
             'name' => '',
-            'email' => '',
+            'email' => 'mariaj.jaramilloa@autonoma.edu.co',
             'property' => '',
+            'telefono' => 123,
             'password' => '',
             'user_id' => 1
         ]);
 
-        Ingreso::create([
+        Owner::create([
             'name' => '',
-            'email' => '',
+            'email' => 'sofi.p@autonoma.edu.co',
             'property' => '',
+            'telefono' => 678,
             'password' => '',
             'user_id' => 2
         ]);
 
-        Ingreso::create([
+        Owner::create([
             'name' => '',
-            'email' => '',
+            'email' => 'isa.grajales@autonoma.edu.co',
             'property' => '',
+            'telefono' => 123,
             'password' => '',
             'user_id' => 3
         ]);
 
-        Ingreso::create([
+        Owner::create([
             'name' => '',
-            'email' => '',
+            'email' => 'valentina.alvarez@autonoma.edu.co',
             'property' => '',
+            'telefono' => 8765,
             'password' => '',
             'user_id' => 4
         ]);
