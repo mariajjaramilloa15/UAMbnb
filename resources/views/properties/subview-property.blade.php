@@ -4,7 +4,7 @@
                 <div class="card" style="width: 18rem;">
                     <img src="..." class="card-img-top" alt="...">
                     <div class="card-body">
-                      <h5 class="card-title">{{ $property->name }}</h5>
+                      <p class="card-text">{{ $property->name }}</p>
                       <p class="card-text">{{ $property->descripcion }}</p>
                       <p class="card-text">{{ $property->precio }}</p>
                       <p class="card-text">{{ $property->likes }}</p>
@@ -21,7 +21,7 @@
                 <i class="fa-solid fa-pen-to-square" tittle="Editar "></i>
             </a>
 
-            <br>
+            <br></br>
 
                 {!! Form::open(['route'=> ['properties.destroy', $property->id], 'method'=> 'delete'])  !!}
 
@@ -37,6 +37,7 @@
         </div>
      @endif
      @endauth
+
 
     </div>
 </div>

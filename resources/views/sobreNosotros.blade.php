@@ -28,28 +28,29 @@
 </div>
 
 <br>
+
 <div class="row">
-    <div class="col">
-<div class="card" style="width: 16rem;" >
-    <img src="https://i.pinimg.com/564x/16/3f/c4/163fc488f6683ef1008563e189c04e23.jpg" class="card-img-top" alt="...">
-    <div class="card-body">
-    </div>
+    <div class="col-4">
+        <div class="card" style="width: 16rem;" >
+            <img src="https://i.pinimg.com/564x/16/3f/c4/163fc488f6683ef1008563e189c04e23.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+     </div>
 </div>
     </div>
-    <div class="col">
+    <div class="col-4">
         <div class="card" style="width: 18rem;">
             <img src="https://i.pinimg.com/564x/97/76/a3/9776a32e4ba255769ea432ff9aced44f.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-            </div>
+        <div class="card-body">
+    </div>
         </div>
             </div>
-            <div class="col">
-                <div class="card" style="width: 18rem;">
-                    <img src="https://i.pinimg.com/564x/81/fd/55/81fd55e1f6c8351aa9bec67c17c454c0.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                    </div>
-                </div>
-                    </div>
+        <div class="col-4">
+             <div class="card" style="width: 18rem;">
+                 <img src="https://i.pinimg.com/564x/81/fd/55/81fd55e1f6c8351aa9bec67c17c454c0.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+         </div>
+        </div>
+     </div>
 </div>
 <br>
 <h5>

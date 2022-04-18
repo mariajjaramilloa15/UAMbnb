@@ -11,7 +11,7 @@
 
             <a class="btn btn-primary" href="#" role="button">Arrendar</a>
             <a class="btn btn-primary" href="#" role="button">Publicar</a>
-            <a class="btn btn-primary" href="#" role="button">Sobre Nosotros</a>
+            <a class="btn btn-primary" href="{{ url('/sobreNosotros') }}" role="button">Sobre Nosotros</a>
 
         </div>
 
