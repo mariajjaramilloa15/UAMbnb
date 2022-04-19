@@ -1,8 +1,10 @@
+@forelse ($properties as $property)
+
 <div class="card mb-3">
     <div class="card-body d-flex justify-content-between">
 
                 <div class="card" style="width: 18rem;">
-                    <img src="..." class="card-img-top" alt="...">
+                    <img src="https://i.pinimg.com/564x/81/fd/55/81fd55e1f6c8351aa9bec67c17c454c0.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
                       <p class="card-text">{{ $property->name }}</p>
                       <p class="card-text">{{ $property->descripcion }}</p>
@@ -21,7 +23,7 @@
                 <i class="fa-solid fa-pen-to-square" tittle="Editar "></i>
             </a>
 
-            <br></br>
+            <br>
 
                 {!! Form::open(['route'=> ['properties.destroy', $property->id], 'method'=> 'delete'])  !!}
 
@@ -41,3 +43,8 @@
 
     </div>
 </div>
+@empty
+    <div class="alert alert-info" role="alert">
+        No hay Propiedades para mostrar
+    </div>
+@endforelse

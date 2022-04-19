@@ -38,7 +38,8 @@
 
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
-                    <img src="https://i.postimg.cc/sXd1G5RP/Whats-App-Image-2022-04-15-at-4-16-06-PM.jpg"   width="115" height="35">
+
+                    <img href="{{ url('./welcome') }}" src="https://i.postimg.cc/sXd1G5RP/Whats-App-Image-2022-04-15-at-4-16-06-PM.jpg"   width="115" height="35" >
 
                     </ul>
 
@@ -82,11 +83,24 @@
                     </ul>
                 </div>
             </div>
+
         </nav>
+
 
         <main class="py-4">
             @yield('content')
         </main>
+    </div>
+    <div>
+        <footer class="page-footer font-small blue pt-4">
+        <!-- Copyright -->
+        <div class="footer-copyright text-center py-3" style="background-color:#E5F2FF ; margin: 20px; color:black ">
+            
+            Desarrollado en Programación Backend ©️ 2022
+
+      <!-- Copyright -->
+
+        </footer>
     </div>
 </body>
 </html>
