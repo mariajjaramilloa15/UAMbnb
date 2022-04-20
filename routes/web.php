@@ -4,8 +4,10 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PropertyController;
 use App\Http\Controllers\OwnerController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\cuentaTotalController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+
 
 
 /*
@@ -23,6 +25,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+
 
 
 Route::get('/sobreNosotros', function () {
@@ -56,5 +60,17 @@ Route::middleware(['auth'])->group(function (){
 
     Route::resource('owners', OwnerController::class)
     ->middleware('auth');
+
+    Route::get('cuentaTotal', [cuentaTotalController::class, 'create'])
+    ->middleware('auth');
+
+    Route::get('/property', function () {
+        return view('property');
+    });
+
+    Route::get('/pay', function () {
+        return view('pay');
+    });
+
 
 });

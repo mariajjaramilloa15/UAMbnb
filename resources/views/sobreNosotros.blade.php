@@ -1,6 +1,7 @@
 @extends("layouts.app")
 @section("content")
 
+<div class = "centrar1">
 <div class="text-center">
 <h1>NOSOTROS</h1>
 
@@ -66,6 +67,7 @@
     Te brindamos los mejores espacios, para que te sientas a gusto
 </h5>
 
+</div>
 </div>
 </div>
 

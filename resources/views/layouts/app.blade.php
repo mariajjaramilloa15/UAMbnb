@@ -56,18 +56,23 @@
                                 </li>
                             @endif
 
+
                             @if (Route::has('register'))
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                                 </li>
                             @endif
                         @else
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }}
-                                </a>
 
-                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <img class="center" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/OOjs_UI_icon_userAvatar.svg/1200px-OOjs_UI_icon_userAvatar.svg.png" width="15" height="15">
+                                {{ Auth::user()->name }}
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDarkDropdownMenuLink">
+                              <li><a class="dropdown-item" href="{{ route('properties.index') }}">Mis Propiedades</a></li>
+                              <li><a class="dropdown-item" href="{{ url('/cuentaTotal') }}">Mi cuenta</a></li>
+                              <li>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -77,8 +82,9 @@
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf
                                     </form>
-                                </div>
-                            </li>
+                              </li>
+                            </ul>
+                        </li>
                         @endguest
                     </ul>
                 </div>
@@ -95,7 +101,7 @@
         <footer class="page-footer font-small blue pt-4">
         <!-- Copyright -->
         <div class="footer-copyright text-center py-3" style="background-color:#E5F2FF ; margin: 20px; color:black ">
-            
+
             Desarrollado en Programación Backend ©️ 2022
 
       <!-- Copyright -->
