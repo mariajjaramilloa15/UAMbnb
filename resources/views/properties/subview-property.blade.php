@@ -4,14 +4,14 @@
     <div class="card-body d-flex justify-content-between">
 
                 <div class="card" style="width: 15rem;">
-                    <img src="https://i.pinimg.com/564x/81/fd/55/81fd55e1f6c8351aa9bec67c17c454c0.jpg" class="card-img-top" alt="...">
+                    <div class="card-img-top">{{ $property->post }}</div>
                     <div class="card-body">
                       <p class="card-text">{{ $property->name }}</p>
                       <p class="card-text">{{ $property->descripcion }}</p>
                       <p class="card-text">{{ $property->precio }}</p>
                       <p class="card-text">{{ $property->likes }}</p>
                       <h6 class="card-subtitle mb-2 text-muted">{{ $property->created_at->diffForHumans()}}</h6>
-                      <a href="#" class="btn btn-primary">Ver Inmueble</a>
+                      <a href="{{ url('/property') }}" class="btn btn-primary">Ver Inmueble</a>
                     </div>
                 </div>
 

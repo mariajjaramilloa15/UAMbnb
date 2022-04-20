@@ -1,13 +1,13 @@
 @extends("layouts.app")
 @section("content")
 
+<div class="container">
 <div class = "centrar">
-<div class="text-center">
 
 <div class="row">
 <div class="col-6">
 <div class="card mt-5 " style= "width: 280px">
-  
+
   <div class="card-body">
       <h5 class="card-title">BROCHA MINI</h5>
       <p class="card-text">$10.000</p>

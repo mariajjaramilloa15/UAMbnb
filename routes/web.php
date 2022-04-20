@@ -5,6 +5,7 @@ use App\Http\Controllers\PropertyController;
 use App\Http\Controllers\OwnerController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\cuentaTotalController;
+use App\Http\Controllers\imageController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -25,9 +26,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-
-
-
 
 Route::get('/sobreNosotros', function () {
     return view('sobreNosotros');
@@ -72,5 +70,10 @@ Route::middleware(['auth'])->group(function (){
         return view('pay');
     });
 
+    Route::get('image', [imageController::class, 'index'])
+    ->middleware('auth');
+
+    Route::get('imageguardar', [imageController::class, 'imageguardar'])
+    ->middleware('auth');
 
 });

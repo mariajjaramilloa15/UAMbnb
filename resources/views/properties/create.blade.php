@@ -1,5 +1,7 @@
 @extends("layouts.app")
 @section("content")
+
+<div class="container">
     <div class="row">
         <div class="col-12">
             <h1>Agregar Propiedad</h1>
@@ -36,10 +38,20 @@
                 </div>
                 <br>
 
+                <form action="image" enctype="multipart/form-data" method="POST">
+                    @csrf
+                    <input type="text" name="nombre" placeholder="ingrese nombre:">
+                    <input type="file" name="imagen">
+                    <button type="submit" class="btn btn-success">Guardar</button>
+                 </form>
+                 <br>
+
                 @include("notificacion")
-                <button class="btn btn-success">Guardar</button>
+
+
                 <a class="btn btn-primary" href="{{route("properties.index")}}">Volver al listado</a>
             </form>
         </div>
     </div>
+</div>
 @endsection

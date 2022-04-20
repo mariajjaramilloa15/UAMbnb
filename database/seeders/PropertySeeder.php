@@ -21,6 +21,8 @@ class PropertySeeder extends Seeder
             'area' => 12,
             'precio' => 12000,
             'caracteristicas' => '',
+            'Lat' => 1000,
+            'Lng' => 2000,
             'comentarios' => '',
             'likes' => 12,
             'user_id' => 1
@@ -32,6 +34,8 @@ class PropertySeeder extends Seeder
             'area' => 12,
             'precio' => 12000,
             'caracteristicas' => '',
+            'Lat' => 5000,
+            'Lng' => 3000,
             'comentarios' => '',
             'likes' => 10,
             'user_id' => 2
@@ -43,6 +47,8 @@ class PropertySeeder extends Seeder
             'area' => 12,
             'precio' => 12000,
             'caracteristicas' => '',
+            'Lat' => 7000,
+            'Lng' => 9000,
             'comentarios' => '',
             'likes' => 18,
             'user_id' => 3
@@ -54,6 +60,8 @@ class PropertySeeder extends Seeder
             'area' => 12,
             'precio' => 12000,
             'caracteristicas' => '',
+            'Lat' => 6000,
+            'Lng' => 2000,
             'comentarios' => '',
             'likes' => 16,
             'user_id' => 4
