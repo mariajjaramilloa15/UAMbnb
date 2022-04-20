@@ -10,9 +10,11 @@
 
     </div>
   </div>
+</div>
 
-    @include('layouts.subview-form-errors')
-
+<div class="text-center">
+<a class="btn btn-primary" href="{{ url('/pay') }}" role="button">Ir a Pagar</a>
 </div>
 </div>
+
 @endsection
