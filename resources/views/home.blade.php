@@ -9,7 +9,7 @@
     <br>
         <div class="d-flex justify-content-around">
 
-            <a class="btn btn-primary" href="{{ url('/property') }}" role="button">Arrendar</a>
+            <a class="btn btn-primary" href="{{ url('/properties') }}" role="button">Arrendar</a>
             <a class="btn btn-primary" href="{{ url('/properties/create') }}" role="button">Publicar</a>
             <a class="btn btn-primary" href="{{ url('/sobreNosotros') }}" role="button">Sobre Nosotros</a>
 
