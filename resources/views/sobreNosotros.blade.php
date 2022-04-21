@@ -3,7 +3,7 @@
 
 <div class="container">
 <div class = "text-center">
-<h1>NOSOTROS</h1>
+<h1>SOBRE NOSOTROS</h1>
 <br>
 <div class="row">
 <div class="col-4">
@@ -61,7 +61,7 @@
 </div>
 <br>
 <h5>
-    Te brindamos los mejores espacios, para que te sientas a gusto
+    Te brindamos los mejores espacios para que te sientas a gusto
 </h5>
 
 </div>

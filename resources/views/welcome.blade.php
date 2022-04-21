@@ -67,8 +67,23 @@
                     </div>
 
                  </div>
+                <br>
+                <div>
+                    <br>
 
+                 @if (Route::has('login'))
+                        <a class="btn btn-primary" href="{{ route('login') }}">{{ __('Login') }}</a>
+                 @endif
+                 <br>
+                 <br>
+                 @if (Route::has('register'))
+                        <a class="btn btn-primary" href="{{ route('register') }}">{{ __('Register') }}</a>
+                 @endif
+                 <br>
+                 <br>
                  <a class="btn btn-primary" href="{{ url('/sobreNosotros') }}" role="button">Sobre Nosotros</a>
+
+                </div>
             </div>
             </div>
         </div>
