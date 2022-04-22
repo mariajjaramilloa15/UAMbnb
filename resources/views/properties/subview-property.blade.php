@@ -27,13 +27,13 @@
 
                 {!! Form::open(['route'=> ['properties.destroy', $property->id], 'method'=> 'delete'])  !!}
 
+
                 {!! Form::button('<i class="fa-solid fa-trash-can"></i>', [
                     'type' =>'submit',
                     'tittle' => "Remover Inmueble",
                     'class' => 'btn btn-outline-danger',
                     'onclick' => "return confirm('¿Está seguro?')"
                 ])  !!}
-
                 {!! Form::close() !!}
 
         </div>

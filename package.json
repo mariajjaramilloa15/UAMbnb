@@ -21,6 +21,14 @@
         "sass-loader": "^11.0.1"
     },
     "dependencies": {
+<<<<<<< HEAD
         "@fortawesome/fontawesome-free": "^6.1.1"
+=======
+<<<<<<< HEAD
+        "@fortawesome/fontawesome-free": "^6.0.0"
+=======
+        "@fortawesome/fontawesome-free": "^6.1.1"
+>>>>>>> fff3dd78508770d979c2c241833fe2f6b5fcc9e0
+>>>>>>> c98c193d429d1084c728f3fa3c2ac12baa6c72fb
     }
 }

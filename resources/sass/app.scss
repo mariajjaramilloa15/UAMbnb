@@ -8,11 +8,10 @@
 @import '~bootstrap/scss/bootstrap';
 
 // FontAwesome
-@import "~@fortawesome/fontawesome-free/scss/fontawesome";
-@import "~@fortawesome/fontawesome-free/scss/solid";
-@import "~@fortawesome/fontawesome-free/scss/brands";
-@import "~@fortawesome/fontawesome-free/scss/regular";
-
+@import '~@fortawesome/fontawesome-free/scss/fontawesome';
+@import '~@fortawesome/fontawesome-free/scss/solid';
+@import '~@fortawesome/fontawesome-free/scss/brands';
+@import '~@fortawesome/fontawesome-free/scss/regular';
 .centrar
 {
     margin-right: 6%;
@@ -29,4 +28,40 @@
     margin-right: auto;
 
 }
+
+#form {
+    width: 550px;
+    margin: 0 auto;
+    height: 100px;
+  }
+
+  #form p {
+    text-align: center;
+  }
+
+  #form label {
+    font-size: 20px;
+  }
+
+  input[type="radio"] {
+    display: none;
+  }
+
+  label {
+    color: grey;
+  }
+
+  .clasificacion {
+    direction: rtl;
+    unicode-bidi: bidi-override;
+  }
+
+  label:hover,
+  label:hover ~ label {
+    color: orange;
+  }
+
+  input[type="radio"]:checked ~ label {
+    color: orange;
+  }
 
