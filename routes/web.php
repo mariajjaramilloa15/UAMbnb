@@ -53,8 +53,7 @@ Route::middleware(['auth'])->group(function (){
     Route::resource('users', UserController::class)
     ->except(['index']);
 
-    Route::resource('properties', PropertyController::class)
-    ->middleware('auth');
+    Route::resource('properties', PropertyController::class);
 
     Route::resource('owners', OwnerController::class)
     ->middleware('auth');

@@ -103,7 +103,7 @@ class PropertyController extends Controller
 
             return redirect(route('user.property', $property->user_id));
         }else{
-            return "No puedes eliminar este inmueble. ";
+            return "No puedes eliminar este Inmueble. ";
         }
 
     }
