@@ -6,6 +6,18 @@
         <div class="col-12">
             <h1>Agregar Propiedad</h1>
             <form method="POST" action="{{route("properties.store")}}">
+
+                <div class="row justify-content-center">
+                    @forelse ($properties as $property)
+                        @empty
+                        <div class="alert alert-info" role='alert'>
+                             El usuario no ha registrado ningun Inmueble.
+                        </div>
+                    @endforelse
+
+                </div>
+
+
                 @csrf
                 <div class="form-group">
                     <label class="label">Nombre</label>
@@ -42,11 +54,18 @@
                     @csrf
                     <input type="text" name="nombre" placeholder="ingrese nombre:">
                     <input type="file" name="imagen">
-                    <button type="submit" class="btn btn-success">Guardar</button>
+                    <button type="submit" class="btn btn-primary">Guardar</button>
                  </form>
                  <br>
 
                 @include("notificacion")
+
+                @include('layouts.subview-form-errors')
+
+                {!! Form::open(['route' => 'properties.store', 'method' => 'property']) !!}
+
+                <button type="submit" class="btn btn-outline-info">Guardar</button>
+                {!! Form::close() !!}
 
 
                 <a class="btn btn-primary" href="{{route("properties.index")}}">Volver al listado</a>
