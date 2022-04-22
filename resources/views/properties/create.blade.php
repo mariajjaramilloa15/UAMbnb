@@ -11,7 +11,7 @@
                     @forelse ($properties as $property)
                         @empty
                         <div class="alert alert-info" role='alert'>
-                             El usuario no ha registrado ningun Inmueble.
+                             El usuario no ha registrado ningún Inmueble.
                         </div>
                     @endforelse
 
