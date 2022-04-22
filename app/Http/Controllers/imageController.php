@@ -17,7 +17,7 @@ class imageController extends Controller
         $post->nombre = $request->nombre;
         // script para subir la imagen
         if($request->hasFile("imagen")){
-
+            
             $imagen = $request->file("imagen");
             $nombreimagen = Str::slug($request->nombre).".".$imagen->guessExtension();
             $ruta = public_path("img/post/");

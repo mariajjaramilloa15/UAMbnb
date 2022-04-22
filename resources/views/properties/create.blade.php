@@ -9,18 +9,13 @@
 
                 <div class="row justify-content-center">
                     @forelse ($properties as $property)
-                        <div class="card mb-3" >
-                            <div class="card-body border-0">
-                                @include('properties.subview-property', ['user'=>Auth::user()])
-                            </div>
-                        </div>
-        @empty
+                        @empty
                         <div class="alert alert-info" role='alert'>
                              El usuario no ha registrado ningun Inmueble.
                         </div>
                     @endforelse
 
-            </div>
+                </div>
 
 
                 @csrf
