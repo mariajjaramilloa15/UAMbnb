@@ -21,8 +21,8 @@
                 @csrf
                 <div class="form-group">
                     <label class="label">Nombre</label>
-                    <input required autocomplete="off" name="nombre" class="form-control"
-                           type="text" placeholder="Name">
+                    <input required autocomplete="off" name="name" class="form-control"
+                           type="text" placeholder="Nombre">
                 </div>
                 <br>
                 <div class="form-group">
@@ -54,7 +54,6 @@
                     @csrf
                     <input type="text" name="nombre" placeholder="ingrese nombre:">
                     <input type="file" name="imagen">
-                    <button type="submit" class="btn btn-primary">Guardar</button>
                  </form>
                  <br>
 
@@ -64,7 +63,8 @@
 
                 {!! Form::open(['route' => 'properties.store', 'method' => 'property']) !!}
 
-                <button type="submit" class="btn btn-outline-info">Guardar</button>
+                <button type="submit" class="btn btn-primary">Guardar</button>
+
                 {!! Form::close() !!}
 
 

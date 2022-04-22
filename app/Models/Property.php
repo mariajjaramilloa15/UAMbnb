@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\User;
 
 class Property extends Model
 {
@@ -13,7 +14,9 @@ class Property extends Model
         'user_id',
         'name',
         'descripcion',
+        'area',
         'precio',
+        'caracteristicas',
         'comentarios',
         'likes',
     ];
