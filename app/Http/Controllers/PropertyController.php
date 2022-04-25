@@ -29,7 +29,7 @@ class PropertyController extends Controller
      */
     public function create()
     {
-        $properties = Property::where('user_id', Auth::id())
+         $properties = Property::where('user_id', Auth::id())
             ->get();
 
         return view('properties.create', compact('properties'));
@@ -43,12 +43,14 @@ class PropertyController extends Controller
      */
     public function store(PropertyCreateRequest $request)
     {
+
         $property = new Property();
         $property->fill($request->input());
         $property->user_id = Auth::id();
+        dd($property);
         $property->save();
 
-        return redirect(route('home'));
+        return redirect(route('properties.index'));
 
         //dd ($request->input('content'));
     }

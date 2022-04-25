@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Property;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
@@ -15,18 +16,19 @@ class PropertySeeder extends Seeder
      */
     public function run()
     {
-        Property::create([
+         Property::create([
             'name' => 'Apartamento',
-            'descripcion' => 'fsdf',
+            'descripcion' => 'blabla',
             'area' => 12,
             'precio' => 12000,
-            'caracteristicas' => 'fafd',
-            'Lat' => 1000,
-            'Lng' => 2000,
-            'comentarios' => '5',
-            'likes' => 12,
-            'user_id' => 1
-        ]);
+            'caracteristicas' => 'ala',
+            'Lat' => 5000,
+            'Lng' => 3000,
+            'comentarios' => '4',
+            'likes' => 10,
+            'user_id' => 2
+         ]);
+
 
         Property::create([
             'name' => 'Apartamento',

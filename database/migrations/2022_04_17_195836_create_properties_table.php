@@ -23,7 +23,7 @@ class CreatePropertiesTable extends Migration
             $table->float('Lat');
             $table->float('Lng');
             $table->string('comentarios');
-            $table->integer('likes')->nullable();
+            $table->integer('likes');
             $table->foreignId('user_id')->references('id')->on('users');
             $table->timestamp('last_used_at')->nullable();
             $table->timestamps();
