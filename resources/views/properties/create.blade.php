@@ -63,12 +63,12 @@
 
                 {!! Form::open(['route' => 'properties.store', 'method' => 'property']) !!}
 
-                <button type="submit" class="btn btn-primary">Guardar</button>
+                <button type="submit" class="btn btn-outline-primary">Guardar</button>
 
                 {!! Form::close() !!}
 
-
-                <a class="btn btn-primary" href="{{route('properties.index')}}">Volver al listado</a>
+                 <br>
+                <a class="btn btn-outline-primary" href="{{route('properties.index')}}">Volver al listado</a>
             </form>
         </div>
     </div>

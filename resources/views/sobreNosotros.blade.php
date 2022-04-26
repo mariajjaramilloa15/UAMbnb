@@ -23,10 +23,12 @@
 
 
 <div class="col-4">
+    <a class="btn btn-outline-primary" href="{{ url('/home') }}" role="button">Volver</a>
     <br>
     <br>
     <br>
     <img class="center" src="https://i.ibb.co/dbg32Rg/Captura.jpg" width="150" height="150">
+
 </div>
 
 </div>

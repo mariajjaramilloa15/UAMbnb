@@ -11,7 +11,7 @@
 
         @include('properties.subview-property-fields')
 
-        <button type="submit" class="btn btn-outline-info">Editar</button>
+        <button type="submit" class="btn btn-outline-primary">Editar</button>
 
         {!! Form::close() !!}
 

@@ -43,6 +43,9 @@
 
 
                 <div class="text-center">
+                    <h2>INMOBILIARIA UAMbnb</h2>
+                    <p>¡Te brindamos los mejores espacios a los mejores precios!</p>
+                    <br>
                 <div class="row">
                 <div class="col-4">
                     <div class="card" style="width: 16rem;" >
