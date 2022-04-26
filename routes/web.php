@@ -47,22 +47,16 @@ Route::middleware(['auth'])->group(function (){
     Route::get('/a/{user}', [PropertyController::class, 'index'])
     ->name('user.properties');
 
-    Route::get('/e/{user}', [OwnerController::class, 'index'])
-    ->name('user.owners');
-
     Route::resource('users', UserController::class)
     ->except(['index']);
 
     Route::resource('properties', PropertyController::class);
 
-    Route::resource('owners', OwnerController::class)
-    ->middleware('auth');
-
     Route::get('cuentaTotal', [cuentaTotalController::class, 'create'])
     ->middleware('auth');
 
     Route::get('/property', function () {
-        return view('property');
+        return view('properties.property');
     });
 
     Route::get('/pay', function () {
