@@ -13,8 +13,8 @@
         {!! Form::close() !!}
 
     <br>
-    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false">
-    </script>
+
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
 
     <script type="text/javascript">
     var myCenter=new google.maps.LatLng(39.46910009461806, -0.39186259999996764);
