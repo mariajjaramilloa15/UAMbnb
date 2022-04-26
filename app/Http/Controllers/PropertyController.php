@@ -19,7 +19,22 @@ class PropertyController extends Controller
     public function index()
     {
         $properties = Property::all();
-        return view('properties.index', compact('properties'));
+        $data = array(
+            ["lat" => 4.60971,"long" => -74.08175],
+            ["lat" => 3.43722,"long" => -76.5225],
+            ["lat" => 6.25184,"long" => -75.56359],
+            ["lat" => 10.96854, "long" => -74.78132],
+            ["lat" => 10.39972, "long" => -75.51444 ],
+            ["lat" => 7.89391, "long" => -72.50782],
+            ["lat" => 7.12539, "long" => -73.1198],
+            ["lat" => 4.81333,  "long" => -75.69611],
+            ["lat" => 11.24079, "long" => -74.19904],
+            ["lat" => 4.43889,  "long" => -75.23222],
+            ["lat" => 6.33732, "long" => -75.55795],
+            ["lat" => 1.21361,  "long" => -77.28111],
+            ["lat" => 5.06889,"long" =>  -75.51738]
+          );
+        return view('properties.index', compact('properties', 'data'));
     }
 
     /**
