@@ -1,6 +1,6 @@
 <div class="mb-3">
 
-   <h5>Nombre</h5> {!! Form::text('name', null ['class' => 'form-control', 'rows' => 3]); !!}
+   <h5>Nombre</h5> {!! Form::text('name', null, ['class' => 'form-control', 'rows' => 3]); !!}
    <br>
    <h5>Descripción</h5> {!! Form::text('descripcion', null, ['class' => 'form-control', 'rows' => 3]); !!}
    <br>

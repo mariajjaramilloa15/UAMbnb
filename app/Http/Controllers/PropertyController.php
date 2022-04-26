@@ -47,7 +47,6 @@ class PropertyController extends Controller
         $property = new Property();
         $property->fill($request->input());
         $property->user_id = Auth::id();
-        dd($property);
         $property->save();
 
         return redirect(route('properties.index'));
@@ -103,7 +102,7 @@ class PropertyController extends Controller
         if($property->user_id == Auth::id()){
             $property->delete();
 
-            return redirect(route('user.property', $property->user_id));
+            return redirect(route('properties.index', $property->user_id));
         }else{
             return "No puedes eliminar este Inmueble. ";
         }

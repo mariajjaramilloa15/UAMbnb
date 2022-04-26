@@ -23,15 +23,14 @@
 
                 {!! Form::open(['route' => ['properties.destroy', $property->id], 'method' => 'delete']) !!}
 
-                {!! Form::button('<i class="fa-solid fa-trash-can"></i>', [
+            {!! Form::button('<i class="fa-solid fa-trash-can"></i>', [
                 'type' => 'submit',
                 'title' => "Remover Inmueble",
                 'class' => 'btn btn-danger',
-                'onclick' => "return confirm('¿Está seguro de remover este Inmueble?')"
-                ]) !!}
+                'onclick' => "return confirm('¿Está seguro de remover este inmueble?')"
+            ]) !!}
 
-                {!! Form::close() !!}
-
+            {!! Form::close() !!}
             </div>
         </div>
 </div>

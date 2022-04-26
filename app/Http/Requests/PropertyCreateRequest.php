@@ -28,7 +28,7 @@ class PropertyCreateRequest extends FormRequest
             'name'=>'required|string|max:500|min:8',
             'descripcion'=>'required|string|max:500|min:8',
             'area'=>'required|integer|max:500|min:8',
-            'precio'=>'required|integer|max:500|min:8',
+            'precio'=>'required|integer|max:500000000|min:8',
             'caracteristicas'=>'required|string|max:500|min:8',
             'comentarios'=>'|string|max:500|min:8',
             'likes'=>'|string|max:500|min:8',
