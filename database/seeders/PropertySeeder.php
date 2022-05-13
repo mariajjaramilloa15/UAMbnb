@@ -23,8 +23,6 @@ class PropertySeeder extends Seeder
             'caracteristicas' => 'Calentador a gas, Cocina Integral, Garaje Independiente, Iluminación natural,
             Sala-Comedor, Vista exterior, Zona de ropas, Ascensor, En conjunto cerrado, Garaje Cubierto,
             Portería/Vigilancia, Salón Comunal, Zona Infantil, Zona Comercial y universitaria, Zona Residencial',
-            'Lat' => 1000,
-            'Lng' => 2000,
             'comentarios' => 'Esta muy bien ubicado, es muy bonito!',
             'likes' => 12,
             'user_id' => 1
@@ -38,8 +36,6 @@ class PropertySeeder extends Seeder
             'caracteristicas' => 'Calentador a gas, Garaje Independiente, Iluminación natural,
             Sala-Comedor, Vista exterior, Zona de ropas, Ascensor, En conjunto cerrado, Garaje Cubierto,
             Portería/Vigilancia, Salón Comunal, Zona universitaria, Zona Residencial',
-            'Lat' => 5000,
-            'Lng' => 3000,
             'comentarios' => 'Es ideal para un estudiante universitario, comodo y lindo.',
             'likes' => 10,
             'user_id' => 2
@@ -53,8 +49,6 @@ class PropertySeeder extends Seeder
             'caracteristicas' => 'Calentador a gas, Cocina Integral, Garaje Independiente, Iluminación natural,
             Sala-Comedor, Vista exterior, Zona de ropas, Ascensor, En conjunto cerrado, Garaje Cubierto,
             Portería/Vigilancia, Salón Comunal, Zona universitaria, Zona Residencial',
-            'Lat' => 7000,
-            'Lng' => 9000,
             'comentarios' => 'Es muy bonito, comodo e ideal para estudiantes',
             'likes' => 18,
             'user_id' => 3
@@ -68,8 +62,6 @@ class PropertySeeder extends Seeder
             'caracteristicas' => 'Calentador a gas, Cocina Integral, Garaje Independiente, Iluminación natural,
             Sala-Comedor, Vista exterior, Zona de ropas, Ascensor, En conjunto cerrado, Garaje Cubierto,
             Portería/Vigilancia, Salón Comunal, Zona Infantil, Zona Comercial, Zona Residencial',
-            'Lat' => 6000,
-            'Lng' => 2000,
             'comentarios' => 'Apartamento grande y bonito, bien ubicado',
             'likes' => 16,
             'user_id' => 4

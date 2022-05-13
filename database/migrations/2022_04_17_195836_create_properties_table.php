@@ -20,10 +20,8 @@ class CreatePropertiesTable extends Migration
             $table->integer('area');
             $table->integer('precio');
             $table->text('caracteristicas');
-            $table->float('Lat');
-            $table->float('Lng');
             $table->string('comentarios');
-            $table->integer('likes');
+            $table->integer('likes')->nullable();
             $table->foreignId('user_id')->references('id')->on('users');
             $table->timestamp('last_used_at')->nullable();
             $table->timestamps();

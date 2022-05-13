@@ -13,9 +13,9 @@
                       <p class="card-text">{{ $property->likes }}</p>
                       <h6 class="card-subtitle mb-2 text-muted">{{ $property->created_at->diffForHumans()}}</h6>
                       <a href="{{ url('/property') }}" class="btn btn-primary">Ver Inmueble</a>
-                      <div class="text-right-center">
+                      <div class="text-right-center d-flex  mt-2 ms-5">
                           <br>
-                        <a href="{{ route('properties.edit', $property->id) }}" class= "btn btn-outline-primary">
+                        <a href="{{ route('properties.edit', $property->id) }}" class= "ms-5 me-2 btn btn-outline-primary">
                             <i class="fa-solid fa-pen-to-square" title="Editar Inmueble"></i>
                         </a>
 

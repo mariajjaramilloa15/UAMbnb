@@ -6,8 +6,11 @@
    <br>
    <h5>Área</h5> {!! Form::number('area', null, ['class' => 'form-control', 'rows' => 3]); !!}
    <br>
+   <h5>Caracteristicas</h5> {!! Form::text('caracteristicas', null, ['class' => 'form-control', 'rows' => 3]); !!}
+   <br>
+   <h5>Comentario</h5> {!! Form::text('comentarios', null, ['class' => 'form-control', 'rows' => 3]); !!}
+   <br>
    <h5>Precio</h5> {!! Form::number('precio', null, ['class' => 'form-control', 'rows' => 3]); !!}
    <br>
-   <h5>Caracteristicas</h5> {!! Form::text('caracteristicas', null, ['class' => 'form-control', 'rows' => 3]); !!}
 
 </div>

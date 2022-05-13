@@ -61,7 +61,10 @@
 <div>
 <br>
 <br>
-<textarea name="comentarios" rows="10" cols="40">Escribe aquí tus comentarios</textarea>
+
+        <textarea name="comentarios" rows="10" cols="40">Escribe aquí tus comentarios</textarea>
+        <br>
+        <button type="submit" class="btn btn-primary">Crear</button>
 <br>
 
 </div>
