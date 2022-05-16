@@ -84,7 +84,7 @@
                  @endif
                  <br>
                  <br>
-                 <a class="btn btn-primary" href="{{ url('/sobreNosotros') }}" role="button">Sobre Nosotros</a>
+                 <a class="btn btn-primary" href="{{ url('/sobreNosotros') }}" role="button">About us</a>
 
                 </div>
             </div>

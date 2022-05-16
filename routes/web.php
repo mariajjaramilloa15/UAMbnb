@@ -6,6 +6,7 @@ use App\Http\Controllers\OwnerController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\cuentaTotalController;
 use App\Http\Controllers\imageController;
+use App\Http\Controllers\ReportController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -68,5 +69,7 @@ Route::middleware(['auth'])->group(function (){
 
     Route::get('imageguardar', [imageController::class, 'imageguardar'])
     ->middleware('auth');
+
+    Route::get('/reports', [ReportController::class, 'index'])->name('reports.index');
 
 });
