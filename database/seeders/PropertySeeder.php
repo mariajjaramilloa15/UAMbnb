@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\Property;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 class PropertySeeder extends Seeder
 {
@@ -23,6 +24,7 @@ class PropertySeeder extends Seeder
             'caracteristicas' => 'Calentador a gas, Cocina Integral, Garaje Independiente, Iluminación natural,
             Sala-Comedor, Vista exterior, Zona de ropas, Ascensor, En conjunto cerrado, Garaje Cubierto,
             Portería/Vigilancia, Salón Comunal, Zona Infantil, Zona Comercial y universitaria, Zona Residencial',
+            'city' => 'Manizales',
             'comentarios' => 'Esta muy bien ubicado, es muy bonito!',
             'likes' => 12,
             'user_id' => 1
@@ -36,6 +38,7 @@ class PropertySeeder extends Seeder
             'caracteristicas' => 'Calentador a gas, Garaje Independiente, Iluminación natural,
             Sala-Comedor, Vista exterior, Zona de ropas, Ascensor, En conjunto cerrado, Garaje Cubierto,
             Portería/Vigilancia, Salón Comunal, Zona universitaria, Zona Residencial',
+            'city' => 'Manizales',
             'comentarios' => 'Es ideal para un estudiante universitario, comodo y lindo.',
             'likes' => 10,
             'user_id' => 2
@@ -49,6 +52,7 @@ class PropertySeeder extends Seeder
             'caracteristicas' => 'Calentador a gas, Cocina Integral, Garaje Independiente, Iluminación natural,
             Sala-Comedor, Vista exterior, Zona de ropas, Ascensor, En conjunto cerrado, Garaje Cubierto,
             Portería/Vigilancia, Salón Comunal, Zona universitaria, Zona Residencial',
+            'city' => 'Manizales',
             'comentarios' => 'Es muy bonito, comodo e ideal para estudiantes',
             'likes' => 18,
             'user_id' => 3
@@ -62,6 +66,7 @@ class PropertySeeder extends Seeder
             'caracteristicas' => 'Calentador a gas, Cocina Integral, Garaje Independiente, Iluminación natural,
             Sala-Comedor, Vista exterior, Zona de ropas, Ascensor, En conjunto cerrado, Garaje Cubierto,
             Portería/Vigilancia, Salón Comunal, Zona Infantil, Zona Comercial, Zona Residencial',
+            'city' => 'Manizales',
             'comentarios' => 'Apartamento grande y bonito, bien ubicado',
             'likes' => 16,
             'user_id' => 4

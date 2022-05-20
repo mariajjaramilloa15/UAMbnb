@@ -2,32 +2,85 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Post;
+use App\Models\Image;
 use Illuminate\Http\Request;
+use App\Http\Requests\ImageRequest;
 
-class imageController extends Controller
+class ImageController extends Controller
 {
-    public function index(){
-        $post = Post::find(1);
-        return view('properties.index',compact('properties'));
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
+        //
     }
 
-    public function imageguardar(Request $request){
-        $post = new Post();
-        $post->nombre = $request->nombre;
-        // script para subir la imagen
-        if($request->hasFile("imagen")){
-            
-            $imagen = $request->file("imagen");
-            $nombreimagen = Str::slug($request->nombre).".".$imagen->guessExtension();
-            $ruta = public_path("img/post/");
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        //
+    }
 
-            //$imagen->move($ruta,$nombreimagen);
-            copy($imagen->getRealPath(),$ruta.$nombreimagen);
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(ImageRequest $request)
+    {
+        //
+    }
 
-            $post->imagen = $nombreimagen;
+    /**
+     * Display the specified resource.
+     *
+     * @param  \App\Models\Image  $image
+     * @return \Illuminate\Http\Response
+     */
+    public function show(Image $image)
+    {
+        //
+    }
 
-        }
-        $post->save();
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  \App\Models\Image  $image
+     * @return \Illuminate\Http\Response
+     */
+    public function edit(Image $image)
+    {
+        //
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Models\Image  $image
+     * @return \Illuminate\Http\Response
+     */
+    public function update(ImageRequest $request, Image $image)
+    {
+        //
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  \App\Models\Image  $image
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy(Image $image)
+    {
+        //
     }
 }

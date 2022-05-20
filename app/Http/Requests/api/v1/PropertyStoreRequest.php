@@ -1,10 +1,12 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http\Requests\api\v1;
 
+use Illuminate\Contracts\Validation\Validator;
+use Illuminate\Http\Exceptions\HttpResponseException;
 use Illuminate\Foundation\Http\FormRequest;
 
-class PropertyCreateRequest extends FormRequest
+class PropertyStoreRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -21,10 +23,14 @@ class PropertyCreateRequest extends FormRequest
      *
      * @return array
      */
+
+    public function failedValidation(Validator $validator){
+        throw new HttpResponseException(response()->json($validator->errors(), 422));
+    }
+
     public function rules()
     {
         return [
-
             'name'=>'required|string|max:500|min:8',
             'descripcion'=>'required|string|max:500|min:8',
             'area'=>'required|integer|max:500|min:8',
@@ -33,8 +39,6 @@ class PropertyCreateRequest extends FormRequest
             'city' => 'required|string|max:50|min:4',
             'comentarios'=>'|string|max:500|min:8',
             'likes'=>'|string|max:500|min:8',
-
-
         ];
     }
 }

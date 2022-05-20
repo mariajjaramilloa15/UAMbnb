@@ -17,11 +17,33 @@ class Property extends Model
         'area',
         'precio',
         'caracteristicas',
+        'city',
         'comentarios',
         'likes',
     ];
 
+    protected $casts = [
+        'user_id',
+        'name',
+        'descripcion',
+        'area',
+        'precio',
+        'caracteristicas',
+        'city',
+        'comentarios',
+        'likes',
+    ];
+
+
     public function user(){
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class, 'user_id');
+    }
+
+    public function images(){
+        return $this->hasMany(Image::class);
+    }
+
+    public function report(){
+        return $this->hasOne(Report::class);
     }
 }

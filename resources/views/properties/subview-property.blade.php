@@ -5,7 +5,13 @@
             <div class="centrar">
                 <div class="card" style="width: 20rem; height:47rem;">
                     <img src="https://i.pinimg.com/564x/16/3f/c4/163fc488f6683ef1008563e189c04e23.jpg" class="card-img-top" width="250" height="340">
-                    <div class="card-img-top">{{ $property->post }}</div>
+                    <div class="card-img-top">
+                        @foreach ( $imagenFoto as $image )
+                        @if ( $image->property_id == $property->id )
+                            <img src="{{ asset('images/'.$image->file) }}" class="img-thumbnail" style="width:100px;height:100px;">
+                        @endif
+                    @endforeach
+                    </div>
                     <div class="card-body">
                       <p class="card-text">{{ $property->name }}</p>
                       <p class="card-text">{{ $property->descripcion }}</p>

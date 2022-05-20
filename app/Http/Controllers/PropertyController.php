@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Property;
 use App\Models\User;
+use App\Models\Image;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\PropertyCreateRequest;
 
@@ -34,7 +36,59 @@ class PropertyController extends Controller
             ["lat" => 1.21361,  "long" => -77.28111],
             ["lat" => 5.06889,"long" =>  -75.51738]
           );
-        return view('properties.index', compact('properties', 'data'));
+
+        $title = 'Listado Inmuebles';
+        $city = $request['city'];
+        $start_date = $request['start_date'];
+        $final_date = $request['start_date'];
+
+
+        if($city){
+            $properties = DB::table('properties')->where('city', $city)->get();
+            /* dd($properties); */
+        }
+
+        $array = [];
+        $array2 = [];
+        $reports = [];
+
+        if($start_date != null && $final_date != null){
+            $comprobacion=0;
+            foreach ($bills as $bill) {
+                $comprobacion=1;
+                $fechaI = $bill->start_date;
+                $fechaF = $bill->final_date;
+
+                if ((($start_date >= $fechaI) && ($start_date <= $fechaF))) {
+                    $comprobacion = 0;
+                }else if(($final_date >= $fechaI && $final_date <= $fechaF)){
+                    $comprobacion = 0;
+                }else if((($start_date <= $fechaI && $start_date <= $fechaF) && ($final_date >= $fechaI && $final_date >= $fechaF))){
+                    $comprobacion = 0;
+                }
+
+
+                if($comprobacion == 1){
+                    $array[] = $bill->report_id;
+                }
+            }
+
+            for ($i=0; $i < count($array); $i++) {
+                $reports[] = DB::table('reports')->where('id', $array[$i])->get();
+            }
+
+            foreach ($reports as $rep) {
+                /* dd($rep, $reports); */
+                foreach ($rep as $re){
+                    $properties[] = DB::table('properties')->where('id', $re->property_id)->get();
+                }
+                /* dd($reports, $rep, $re, $properties); */
+            }
+        }
+
+        $imagenFoto = DB::table('images')->get();
+
+        return view('properties.index', compact('title', 'properties', 'imagenFoto'));
     }
 
     /**
@@ -63,6 +117,21 @@ class PropertyController extends Controller
         $property->fill($request->input());
         $property->user_id = Auth::id();
         $property->save();
+
+        if($request->hasFile('imagenes')){
+            $files=$request->imagenes;
+            foreach ($files as $file) {
+                $image = new Image();
+                $imageName=time().'_'.$file->getClientOriginalName();
+                $request['property_id']=$property->id;
+                $request['file']=$imageName;
+                $file->move(\public_path("/images"),$imageName);
+                $image->fill($request->input());
+                $image->property_id = $property->id;
+                $image->file = $request['file'];
+                $image->save();
+            }
+        }
 
         return redirect(route('properties.index'));
 

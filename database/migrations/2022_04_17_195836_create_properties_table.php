@@ -25,6 +25,7 @@ class CreatePropertiesTable extends Migration
             $table->foreignId('user_id')->references('id')->on('users');
             $table->timestamp('last_used_at')->nullable();
             $table->timestamps();
+            $table->string('city');
         });
     }
 

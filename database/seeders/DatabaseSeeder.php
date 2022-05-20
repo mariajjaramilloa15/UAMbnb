@@ -17,7 +17,10 @@ class DatabaseSeeder extends Seeder
         $this->call([
             UserSeeder::class,
             PropertySeeder::class,
-            OwnerSeeder::class
+            OwnerSeeder::class,
+            ReportSeeder:: class,
+            ImageSeeder:: class,
+            CommentSeeder:: class
         ]);
     }
 }
