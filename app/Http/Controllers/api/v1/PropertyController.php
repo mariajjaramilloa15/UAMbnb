@@ -46,7 +46,7 @@ class PropertyController extends Controller
     public function show(Property $property)
     {
         return response()->json(['data' => $property], 200);
-    }
+    }  
 
     /**
      * Update the specified resource in storage.
