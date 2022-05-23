@@ -37,7 +37,7 @@ class PropertyController extends Controller
             ["lat" => 5.06889,"long" =>  -75.51738]
           );
 
-        $title = 'Listado Inmuebles';
+        /*$title = 'Listado Inmuebles';
         $city = $request['city'];
         $start_date = $request['start_date'];
         $final_date = $request['start_date'];
@@ -45,7 +45,7 @@ class PropertyController extends Controller
 
         if($city){
             $properties = DB::table('properties')->where('city', $city)->get();
-            /* dd($properties); */
+
         }
 
         $array = [];
@@ -78,17 +78,19 @@ class PropertyController extends Controller
             }
 
             foreach ($reports as $rep) {
-                /* dd($rep, $reports); */
+
                 foreach ($rep as $re){
                     $properties[] = DB::table('properties')->where('id', $re->property_id)->get();
                 }
-                /* dd($reports, $rep, $re, $properties); */
+
             }
         }
 
         $imagenFoto = DB::table('images')->get();
+        */
 
-        return view('properties.index', compact('title', 'properties', 'imagenFoto'));
+
+        return view('properties.index', compact('properties', 'data'));
     }
 
     /**
@@ -118,6 +120,7 @@ class PropertyController extends Controller
         $property->user_id = Auth::id();
         $property->save();
 
+        /*
         if($request->hasFile('imagenes')){
             $files=$request->imagenes;
             foreach ($files as $file) {
@@ -131,7 +134,7 @@ class PropertyController extends Controller
                 $image->file = $request['file'];
                 $image->save();
             }
-        }
+        }*/
 
         return redirect(route('properties.index'));
 
