@@ -2,13 +2,13 @@
     <div class="card-body">
         <div class="d-flex justify-content-between">
             <div class="" style=''>
-                <a href="{{ url('/reports/'.$report->id) }}" class="link-dark">
+
                     <h5 class="card-title">
                         <i class="fa-solid fa-clipboard"></i>
-                        <b>Ver</b>
+                        <b>Reporte Inmueble</b>
                         {{-- {{ $category->name }} --}}
                     </h5>
-                </a>
+
                 <h6><b>Noches: </b>{{ $report->nights }}</h6>
                 <h6><b>Huéspedes: </b>{{ $report->lodgers }}</h6>
                 <h6><b>Valor Alquiler: </b>{{ $report->rental_cost }}</h6>

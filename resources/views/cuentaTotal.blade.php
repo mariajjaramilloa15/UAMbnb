@@ -14,6 +14,7 @@
 
 <div class="text-center">
 <a class="btn btn-primary" href="{{ url('/pay') }}" role="button">Ir a Pagar</a>
+<a class="btn btn-primary" href="{{ url('/reports') }}" role="button">Ver Reporte</a>
 </div>
 </div>
 

@@ -18,7 +18,7 @@ class cuentaTotalController extends Controller
 
             $cuentaTotal = 0;
             foreach($properties as $property){
-                $cuentaTotal += $property -> contador;
+                $cuentaTotal += $property -> precio + 34222.0 + 23443.0 + 45432.0;
             }
 
 
